@@ -1,8 +1,8 @@
 ---
 - name: Watch for nginx stopped log message
-  hosts: localhost
+  hosts: all
   sources:
-    - name: file watcher
+    - name: nginx watchdog log
       ansible.eda.file:
         path: /var/log/watchdog-nginx.log
 
