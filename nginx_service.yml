@@ -1,0 +1,14 @@
+---
+- name: Watch for nginx stopped log message
+  hosts: localhost
+  sources:
+    - name: file watcher
+      ansible.eda.file:
+        path: /var/log/watchdog-nginx.log
+
+  rules:
+    - name: Restart nginx if stopped
+      condition: event.payload.line contains "nginx stopped"
+      action:
+        run_playbook:
+          name: restart-nginx.yml
