@@ -1,6 +1,6 @@
 ---
 - name: Restart nginx
-  hosts: 10.8.51.216
+  hosts: "{{ target_host }}"
   become: true
   tasks:
     - name: Restart nginx service
