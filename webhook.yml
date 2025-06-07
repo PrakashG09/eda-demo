@@ -2,8 +2,8 @@
 - name: Restart Nginx if service stopped
   hosts: all
   sources:
-    - name: nginx_watchdog_webhook
-      ansible.eda.webhook:
+    - ansible.eda.webhook:
+        name: nginx_watchdog_webhook
         port: 5001
 
   rules:
