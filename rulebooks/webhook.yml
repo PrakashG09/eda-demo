@@ -13,6 +13,6 @@
         run_job_template:
           name: restart_nginx
           organization: "Default"
-          job_args:
-            extra_vars:
-              target_host: "{{ event.payload.host }}"
+          #job_args:
+          #  extra_vars:
+          #    target_host: "{{ event.payload.host }}"
