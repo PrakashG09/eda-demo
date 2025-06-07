@@ -10,7 +10,8 @@
     - name: Restart nginx if stopped
       condition: event.payload.message == "nginx stopped"
       action:
-        run_playbook:
-          name: restart_nginx.yml
+        run_job_template:
+          name: Restart Nginx
+          Organization: "Default"
           extra_vars:
             target_host: "{{ event.payload.host }}"
