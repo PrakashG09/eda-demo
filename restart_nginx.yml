@@ -1,7 +1,6 @@
 ---
 - name: Restart nginx
-  hosts: 10.8.51.216
-  become: true
+  hosts: all
   tasks:
     - name: Restart nginx service
       ansible.builtin.service:
